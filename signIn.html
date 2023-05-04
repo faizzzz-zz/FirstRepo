@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+background-color: RGB(180,180,180);
+}
+
+label{
+text-shadow:2px 2px 4px blue;
+background-color:blue;
+}
+
+table{
+border:2px double black;
+width:100%;
+height:auto;
+}
+
+th{
+border:2px solid black;
+
+text-align:right;
+text-decoration:underline;
+}
+
+td{
+border:2px solid black;
+
+padding-top:10px;
+text-align:left;
+heigth:auto;
+width:auto;
+}
+
+div{
+text-align:center;
+}
+</style>
+</head>
+
+<body ><form action="chkUser.html">
+<h1>Welcome to the Sign Up!</h1>
+
+<table>
+<tr>
+<th>
+<label>Enter your Name:</label>
+</th>
+<td>
+<input type="text" id="myName" onblur="validateName()" size="30"/><br><br>
+</td>
+</tr>
+
+<tr>
+<th>
+<label>Enter your Password:</label>
+</th>
+<td>
+<input type="password" id="myPassword" onblur="validatePassword()" size="30"/><br><br>
+</td>
+
+</tr>
+</table>
+<button value"Submit" onclick="reDirect()" >LogIn</button>
+<button value="Reset">Forgot Password</button>
+</div>
+</form><script>
+function validateName() {
+var name = document.getElementById('myName').value
+var regex = /^[a-zA-Z]{1,}$/
+if(regex.test(name)==true){
+alert('Successful')
+}else {
+alert('Cannot contain special chars or digits')
+}}
+
+function validatePassword() {
+var pass = document.getElementById('myPassword').value
+var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@._!#$^&*]).{8,}$/
+if(regex.test(pass)==true){
+alert('Successful')
+}else{
+alert('Must contain atleast 1 upper-case, 1 lower-case, 1 digit, 1 special-char and atleast 8 length')
+}}
+
+function reDirect()
+{
+alert("You have been Successfully Logged In to your Account.");
+var w=window.open("homePage.html",'HomePage');
+w.focus();
+
+}
+</script>
+</body>
+</html>
+
+

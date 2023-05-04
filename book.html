@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<style>
+ 
+.menu {
+position: fixed;
+width: 100%;
+top: 0;
+right: 0;
+float:right;
+}
+.menu-content {
+float : center;
+background-color: rgba(61, 51, 51, 1);
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 2;
+padding: 12px 16px;
+}
+
+
+.menu-content a {
+color: white;
+padding: 12px 16px;
+text-decoration: none;
+}
+.menu a:hover {background-color: #2980B9;}
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+img:hover {cursor: pointer;}
+
+img:hover, img{
+width:600px;
+height:600px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+h1.space{
+margin-top:85px;
+text-align:center;
+}
+
+.display{
+display:inline;
+}
+
+.menu-content a:hover{
+display:inline-block;
+}
+
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(255,255,255);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3.5s;
+  animation-name: fade;
+  animation-duration: 3.5s;
+}
+
+.facts{
+height:600px;
+width:auto;
+color:white;
+text-shadow: 2px 2px 4px green;
+
+}
+
+
+.info{
+margin:30px;
+padding:75px;
+text: 25px red;
+display:inline-block;
+border:2px solid blue;
+}
+
+img{
+width:550px;
+height:550px;
+padding:50px;
+margin-left:50px;
+
+}
+
+p{
+bottom:50%;
+right:50%;
+color:black;
+text-shadow: 2px 2px 5px red;
+}
+
+@-webkit-keyimgs fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyimgs fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+ 
+</head>
+<body style="background-color:RGB(180,180,180);">
+
+<div class="menu">
+<div id="myMenu" class="menu-content" >
+<a href="#Events" style="padding-right:300px;">Zumair Events</a>
+<a href="contact_us.html" >Home</a>
+<a href='Credentials.html'>Credential</a>
+<a href='portfolio1.html'>Portfolio</a>
+<a href='blog.html'>Blog</a>
+<a href="contact.html">Contact Us</a>
+<a href="signUp.html" style="padding-left:20px;display:inline;">Create a new Account</a>
+<a href="signIn.html" >Sign Up</a>
+</div>
+</div>
+
+</center>
+<table style="float:right;padding:10px;margin-top:10px;border:2px solid red; height:auto;width:100%;">
+<tr>
+<th>
+<h1>Call Us</h1>
+</th>
+<th>
+<h1>Email</h1>
+</th>
+<th>
+<h1>Address</h1>
+</th>
+</tr>
+
+
+<tr>
+<td style="border-right:1px solid black;">
+<p>9898775445</p>
+<p>9898775454</p>
+</td>
+<td style="border-right:1px solid black;">
+<p>faizul@gmail.com</p>
+<p>zumair@gmail.com</p>
+</td>
+
+<td >
+<p >K. J. Somaiya Vidyavihar, Mumbai 400 070</p>
+</tr>
+</table>
+ 
+
+<script>
+var slideIndex = 0;
+showSlides();
+setText("50% off on First Event Booking",30)
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+var blanks="",maxS=150,minP=0;
+
+function setText(txt,mSec)
+{
+	setInterval("disText('"+txt+"')",mSec)
+}
+function disText(dTxt)
+{
+document.getElementById("sText").innerHTML=blanks+dTxt;
+++minP;
+blanks+="&nbsp";
+if(minP>maxS)
+{
+minP=0;
+blanks="";
+}
+}
+
+</script>
+</body>
+</html>

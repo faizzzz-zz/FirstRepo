@@ -1,0 +1,126 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Ground Booking</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+    font-family: Arial, sans-serif;
+}
+body {
+  background-color: #43434F;
+}
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+label,
+input,
+select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+img {vertical-align: middle;}
+
+img:hover {cursor: pointer;}
+
+img:hover, img{
+width:450px;
+height:450px;
+padding: 80px;
+}
+
+
+        </style>    
+    </head>
+
+    <body>
+        
+        <h1>Ground Booking</h1>
+        <table>
+            <tr>
+<td style="border-right:1px solid black;">
+<img src='grd1.jfif' alt='Corparate Events'style="float:left;" onclick="grdName('+Cricket Ground+')">
+<p style="text-align: center;" id="1">Cricket Ground</p>
+</td>
+<td style="border-right:1px solid black;">
+<img src='grd2.jfif' alt='Automobile Events' onclick="grdName('+Football Ground1+')">
+<p style="text-align: center;" id="2">Football Ground 1</p>
+</td>
+</tr>
+<tr>
+    <td style="border-right:1px solid black;">
+        <img src='grd3.jfif' alt='Social Events' style="float:right;" onclick="grdName('+Football Ground2+')">
+        <p style="text-align: center;" id="3">Football Ground 2</p>
+        </td>
+   
+<td style="border-right:1px solid black;">
+           <img src='grd4.jfif' alt='Social Events' style="float:right;" onclick="grdName('+Football Ground3 +')">
+            <p style="text-align: center;" id="4">Football Ground 3</p>
+            </td>
+   </tr>         
+</table>
+<br><br>
+        <form id="booking-form" action="book.php" method="post">
+            <label for="ground-name">Ground Name:</label>
+            <select id="event_name" name="event_name1">
+				<option>Cricket Ground</option>
+				<option>Football Ground1</option>
+				<option>Football Ground2</option>
+				<option>Football Ground3</option>
+			</select>
+            <label for="event-name">Event Name:</label>
+            <select id="event_name" name="event_name2">
+				<option>Corporate Events planning</option>
+				<option>Automobile Events planning</option>
+				<option>Wedding Events planning</option>
+				<option>Anniversary Events planning</option>
+				<option>Others Events planning</option>
+			</select>
+            <label for="booking-date" onchange="chkGrd()">Booking Date:</label>
+            <input type="date" id="booking-date" name="booking_date" required>
+            <label for="booking-time">Booking Time:</label>
+            <input type="time" id="booking-time" name="booking_time" required>
+            
+            <label for="num-participants">Number of Participants:</label>
+            <input type="number" id="num-participants" name="num_participants" required>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="homePage.html">Back to Home</a>
+        <script src="script.js"></script>
+
+    </body>
+
+    <script>
+        function grdName(gname){
+          
+    document.getElementsById("ground-name").value=gname;
+    
+        }
+        function chkGrd(){
+
+        }
+        </script>
+    </html>
+  

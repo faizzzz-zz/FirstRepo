@@ -1,0 +1,143 @@
+<html>
+<head>
+<style>
+body{
+background-color: RGB(180,180,180);
+}
+
+label{
+text-shadow:2px 2px 4px blue;
+background-color:blue;
+}
+
+table{
+border:2px double black;
+width:100%;
+height:auto;
+}
+
+th{
+border:2px solid black;
+
+text-align:right;
+text-decoration:underline;
+}
+
+td{
+border:2px solid black;
+
+padding-top:10px;
+text-align:left;
+heigth:auto;
+width:auto;
+}
+
+div{
+text-align:center;
+}
+</style>
+</head>
+
+<body ><form action="createUser.php">
+<h1>Welcome to the Sign Up!</h1>
+<table>
+<tr>
+<th>
+<label>Name:</label>
+</th>
+<td>
+<input type="text" id="myName" name="myName" onblur="validateName()" size="30"/><br><br>
+</td>
+</tr>
+<tr>
+<th>
+<label>Age:</label>
+</th>
+
+<td>
+<input type="text" id="myAge" name="myAge" onblur="validateAge()" size="30"/><br><br>
+</td>
+
+</tr>
+<tr>
+<th>
+<label>DOB:</label>
+</th>
+
+<td>
+<input type="text" id="myDOB" nmae="myDOB" onblur="validateDOB()" size="30"/><br><br>
+</td>
+
+</tr>
+
+<tr>
+<th>
+<label>Email:</label>
+</th>
+
+<td>
+<input type="text" id="myEmail" name="myEmail" onblur="validateEmail()" size="30"/><br><br>
+</td>
+
+</tr>
+
+<tr>
+<th>
+<label>Password:</label>
+</th>
+<td>
+<input type="password" id="myPassword" name="myPassword" onblur="validatePassword()" size="30"/><br><br>
+</td>
+
+</tr>
+</table>
+ 
+<div >
+<button value"Submit" onclick="reDirect()">Sign Up</button>
+<button value="Reset">Reset</button>
+</div>
+</form><script>
+function validateName() {
+var name = document.getElementById('myName').value
+var regex = /^[a-zA-Z]{1,}$/
+if(regex.test(name)==true){
+alert('Successful')
+}else {
+alert('Cannot contain special chars or digits')
+}}function validateAge() {
+var age = document.getElementById('myAge').value
+var regex = /^(0?[1-9]|[1-9][0-9])$/
+if(regex.test(age)==true && (age > 18 && age < 80)){alert('Successful')
+}else {alert('1-99 and between 18 and 80')
+}}function validateDOB() {
+vardob = document.getElementById('myDOB').value
+var regex = /^^(0[1-9]|[12][0-9]|3[01])[.\/-](0[1-9]|1[012])[.\/-](19|20)\d\d$/
+if(regex.test(dob)==true){
+alert('Successful')
+}else{alert('Format dd-mm-yyyy or dd/mm/yyyy or dd.mm-.yyy')
+}}function validateEmail() {
+var email = document.getElementById('myEmail').value
+var regex = /^[a-zA-Z][0-9a-zA-Z._]{1,}[@][a-zA-Z]{1,}([.])[a-zA-Z]{1,}([.])?[a-zA-z]{1,}$/
+if(regex.test(email)==true){
+alert('Successful')
+}else{alert('Invalid Email ID')
+}}function validatePassword() {
+var pass = document.getElementById('myPassword').value
+var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@._!#$^&*]).{8,}$/
+if(regex.test(pass)==true){
+alert('Successful')
+}else{
+alert('Must contain atleast 1 upper-case, 1 lower-case, 1 digit, 1 special-char and atleast 8 length')
+}}
+
+function reDirect()
+{
+alert("You have been Successfully registerd!\nThank you for registering in our Website.");
+window.open("main.html",'main');
+
+}
+</script>
+</body>
+</html>
+
+

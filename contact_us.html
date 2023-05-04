@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.menu {
+
+position: fixed;
+width: 100%;
+top: 0;
+right: 0;
+float:right;
+}
+.menu-content {
+float : center;
+background-color: rgba(61, 51, 51, 1);
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+padding: 12px 16px;
+}
+
+
+.menu-content a {
+color: white;
+padding: 12px 16px;
+text-decoration: none;
+}
+.menu a:hover {background-color: #2980B9;}
+
+body{
+background-color: RGB(180,180,180);
+}
+
+table{
+border:1px solid black;
+width:40%;
+height:auto;
+flex:50%;
+}
+
+th{text-align:right;
+text-decoration:underline;
+}
+
+td{
+padding-top:10px;
+text-align:left;
+heigth:auto;
+width:auto;
+}
+
+div.class1{
+border:2px solid black;
+padding:50px;
+margin:25px;
+background-color:black;
+font-family:cursive;
+text-shadow:2px 2px 4px blue;
+text-align:right; 
+display:flex;
+}
+
+
+</style>
+</head>
+
+<body ><form>
+<div class="menu">
+
+<div id="myMenu" class="menu-content" >
+
+<a href="#Events" style="padding-right:350px;">Zumair Events</a>
+<a href="#home" >Home</a>
+<a href='#crdential' >Credential</a>
+<a href='#services'>Services</a>
+<a href="contactUs.html">Contact Us</a>
+
+<a href="signUp.html" style="padding-left:100px;display:inline;">Create a new Account</a>
+<a href="logIn.html">Sign Up</a>
+
+</div>
+</div>
+<div class="class1">
+<h1 style="color:white;z-index:2;padding-top:10px">"Contact Us"</h1>
+</div>
+<center>
+<table >
+<tr>
+<th>
+<h1>Get in Touch</h1>
+</th>
+</tr>
+
+<tr>
+<td>
+We are waiting for you on our office in Mumbai or in other way, you can contact us via the contact form below to discuss your project, your idea.
+</td>
+</tr>
+
+
+<tr>
+<td>
+M.H.Sabbo Siddik Polytechnic, Byculla, Mumbai-400 008.
+</td>
+</tr>
+
+
+
+<tr>
+<th>
+Email:
+</th>
+<td>
+<a href="https://mail.google.com/mail/u/0/#inbox?compose=new" style="a:hover{color:green;};a:click{color:red;}" targer="_blank">admin@ZumairEvents.co.in</a>
+</td>
+</tr>
+
+
+<tr>
+<th>
+Phone:
+</th>
+<td>
+022 6543 7865
+</td>
+</tr>
+</table>
+
+<table>
+<h2>Send us a Message</h2>
+<tr>
+<th>
+<label>Your Name*</label>
+</th>
+<td>
+<input type="text" id="myName" size="30"/><br><br>
+</td>
+</tr>
+
+<tr>
+<th>
+<label>Your Email*</label>
+</th>
+<td>
+<input type="text" id="myEmail" size="30"/><br><br>
+</td>
+</tr>
+
+<tr>
+<th>
+<label>Contact No.*</label>
+</th>
+<td>
+<input type="contact" id="myContact" size="30"/><br><br>
+</td>
+</tr>
+
+<tr>
+<th>
+<label>Services*</label>
+</th>
+<td style="padding-left:25px;">
+
+<select id="myList">
+				<option>Corporate Events planning</option>
+				<option>Automobile Events planning</option>
+				<option>Wedding Events planning</option>
+				<option>Anniversary Events planning</option>
+				<option>Others Events planning</option>
+			</select>
+</td>
+
+</tr>
+<tr>
+<th>
+<label>Your Message*</label>
+</th>
+<td>
+<textarea cols="30" rows="8"></textarea>
+</td>
+
+</tr>
+
+
+<tr>
+	<th colspan="2" style="text-align: center;">
+	<label onclick="validateName() +  validateEmail() +validateContact() ">Submit</label>
+	</th>
+	</tr>
+
+</table>
+</center>
+</form>
+<script>
+ 
+function validateName() {
+var name = document.getElementById('myName').value
+var regex = /^[a-zA-Z]{1,}$/
+if(regex.test(name)==true){
+alert('Successful')
+}else {
+alert('Cannot contain special chars or digits')
+}}
+
+function validateEmail() {
+var email = document.getElementById('myEmail').value
+var regex = /^[a-zA-Z][0-9a-zA-Z._]{1,}[@][a-zA-Z]{1,}([.])[a-zA-Z]{1,}([.])?[a-zA-z]{1,}$/
+if(regex.test(email)==true){
+alert('Successful')
+}else{alert('Invalid Email ID')
+}}
+
+function validateContact() {
+var pass = document.getElementById('myContact').value
+var regex = /([0-9]){10}$/
+if(regex.test(pass)==true){
+    alert('Successful')
+}else{
+alert('Must contain exactly 10 digits.')
+}}
+
+function reDirect()
+{
+alert("You have been Successfully registerd!\nThank you for registering in our Website.");
+window.open("main.html",'main');
+
+}
+</script>
+</body>
+</html>
+
